@@ -1,10 +1,12 @@
 import React from "react";
+import Header from '../components/Header'
 
 const Rocket = () => {
     return (
-      <div>
+      <>
+        <Header />
           <h1>Rocket Page</h1>
-      </div>
+      </>
     )
 }
 
