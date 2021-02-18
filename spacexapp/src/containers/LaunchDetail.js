@@ -3,12 +3,14 @@ import Header from '../components/Header'
 
 const LaunchDetail = props =>{
     
-    const { mission_name } = props.location.state
+    const data = props.location.state?.data
+    
+    console.log(data.mission_name)
 
     return(
         <div>
             <Header />
-            {mission_name}
+            {/* {mission_name} */}
         </div>
     )
 }
