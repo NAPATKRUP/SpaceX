@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { Card, Button } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
-const Rocket = props => {
+const Rocket = (props) => {
   const [allRocket, setAllRocket] = useState([]);
   const { history } = props;
 
