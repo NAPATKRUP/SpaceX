@@ -5,12 +5,11 @@ import { Form, Table, Button } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 import Footer from "../components/Footer";
 
-import LoadingMask from "react-loadingmask";
-import "react-loadingmask/dist/react-loadingmask.css";
-
 const Launch = (props) => {
     const [launchData, setLaunchData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+
+    const [page, setPage] = useState(1);
+    const [loadMore, setLoadMore] = useState(true);
 
     const [queryYear, setQueryYear] = useState("");
     const [queryName, setQueryName] = useState("");
@@ -18,16 +17,23 @@ const Launch = (props) => {
 
     const { history } = props;
 
+    const handleScroll = (event) => {
+        const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+
+        if (scrollHeight - scrollTop === clientHeight) {
+            setPage((prev) => prev + 1);
+        }
+    };
 
     useEffect(() => {
         const getData = async () => {
-            setIsLoading(false)
+            setLoadMore(true);
             const response = await spacexApi.get("/launches");
-            setLaunchData(response.data);
-            setIsLoading(true);
+            setLaunchData((prev) => [...prev, ...response.data]);
+            setLoadMore(false);
         };
         getData();
-    }, []);
+    }, [page]);
 
     const searchData = (rows) => {
         return rows.filter(
@@ -49,84 +55,83 @@ const Launch = (props) => {
     return (
         <>
             <Header />
-            {isLoading ? (
-                <>
-                    <div className="container-fluid mt-2">
-                        <Table hover responsive>
-                            <thead>
-                                <th>mission name</th>
-                                <th>rocket name</th>
-                                <th>Launch year</th>
-                                <th>Launch Success</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        <Form>
-                                            <Form.Control
-                                                placeholder="search Rocket name"
-                                                onChange={(e) =>
-                                                    setQueryName(e.target.value)
-                                                }
-                                            />
-                                        </Form>
-                                    </td>
-                                    <td>
-                                        <Form>
-                                            <Form.Control
-                                                placeholder="search year"
-                                                onChange={(e) =>
-                                                    setQueryYear(e.target.value)
-                                                }
-                                            />
-                                        </Form>
-                                    </td>
-                                    <td>
-                                        <Form>
-                                            <Form.Control
-                                                placeholder="search success"
-                                                onChange={(e) =>
-                                                    setQuerySucces(
-                                                        e.target.value
-                                                    )
-                                                }
-                                            />
-                                        </Form>
-                                    </td>
-                                </tr>
-                                {searchData(launchData).map((e) => {
-                                    return (
-                                        <tr>
-                                            <td>{e.mission_name}</td>
-                                            <td>{e.rocket.rocket_name}</td>
-                                            <td>{e.launch_year}</td>
-                                            <td>
-                                                {e.launch_success?.toString()}
-                                            </td>
-                                            <td>
-                                                <Button
-                                                    variant="primary"
-                                                    onClick={() =>
-                                                        goDetail(e)
-                                                    }
-                                                >
-                                                    See more
-                                                </Button>
-                                            </td>
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </Table>
-                    </div>
-                    <Footer />
-                </>
-            ) : (
-                <LoadingMask loading={true} text={"loading..."}>
-                    <div style={{ width: 500, height: 900 }}></div>
-                </LoadingMask>
-            )}
+            <div
+                style={{
+                    display: "grid",
+                    width: "80%",
+                    height: 800,
+                    margin: "auto",
+                    overflow: "auto",
+                }}
+                onScroll={handleScroll}
+            >
+                <div className="container-fluid mt-2">
+                    <Table hover responsive style={{}}>
+                        <thead>
+                            <th>mission name</th>
+                            <th>rocket name</th>
+                            <th>Launch year</th>
+                            <th>Launch Success</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <Form>
+                                        <Form.Control
+                                            placeholder="search Rocket name"
+                                            onChange={(e) =>
+                                                setQueryName(e.target.value)
+                                            }
+                                        />
+                                    </Form>
+                                </td>
+                                <td>
+                                    <Form>
+                                        <Form.Control
+                                            placeholder="search year"
+                                            onChange={(e) =>
+                                                setQueryYear(e.target.value)
+                                            }
+                                        />
+                                    </Form>
+                                </td>
+                                <td>
+                                    <Form>
+                                        <Form.Control
+                                            placeholder="search success"
+                                            onChange={(e) =>
+                                                setQuerySucces(e.target.value)
+                                            }
+                                        />
+                                    </Form>
+                                </td>
+                            </tr>
+                            {searchData(launchData).map((e) => {
+                                return (
+                                    <tr>
+                                        <td>{e.mission_name}</td>
+                                        <td>{e.rocket.rocket_name}</td>
+                                        <td>{e.launch_year}</td>
+                                        <td>{e.launch_success?.toString()}</td>
+                                        <td>
+                                            <Button
+                                                variant="primary"
+                                                onClick={() => goDetail(e)}
+                                            >
+                                                See more
+                                            </Button>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                        {loadMore && <div >Loading ..</div>}
+                    </Table>
+                </div>
+            </div>
+            <div style={{marginTop:10}}></div>
+            <Footer />
         </>
     );
 };
