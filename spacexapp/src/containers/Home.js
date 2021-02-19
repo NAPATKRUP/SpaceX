@@ -1,48 +1,53 @@
 import React, { useEffect, useState } from "react";
+import { withRouter } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import {withRouter} from 'react-router-dom'
 
-const Home = props => {
+const Home = (props) => {
   const [info, setInfo] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
-  const {history} = props
+  const { history } = props;
 
-  const goOtherPage = pageURL => {
-    history.push(`/${pageURL}`)
-  }
+  const goOtherPage = (pageURL) => {
+    history.push(`/${pageURL}`);
+  };
 
   useEffect(() => {
     const fetchRockets = async () => {
+
       const response = await fetch("https://api.spacexdata.com/v3/info");
       const data = await response.json();
-      console.log(data);
+
       setInfo(data);
       setIsLoading(true);
     };
     fetchRockets();
   }, []);
-  return (
-    isLoading ?(
+
+  return isLoading ? (
     <React.Fragment>
       <Header />
       <div
         className="container-fluid p-4 bg-dark text-light d-flex flex-column justify-content-center align-items-center"
-        style={{ height: "80vh" }}
+        style={{ minHeight: "80vh" }}
       >
         <div className="row">
-          <div className="col-12 col-md-7 d-flex flex-column justify-content-center">
+          <div
+            className="col-12 col-md-7 d-flex flex-column justify-content-center"
+            style={{ height: "80vh" }}
+          >
             <h3>{info.name}</h3>
             <p>{info.summary}</p>
             <div className="d-flex flex-row">
-              <a href={info?.links?.website} className="m-2">
+              <a href={info.links.website} className="m-2">
                 <svg
                   x="0px"
                   y="0px"
                   viewBox="0 0 512 512"
                   width="30px"
                   height="30px"
+                  fill="white"
                 >
                   <g>
                     <path d="M246.857,455.835v-81.371c-18.648,0.835-37.077,4.354-54.72,10.45C204.626,423.022,224.448,449.966,246.857,455.835z" />
@@ -127,6 +132,7 @@ const Home = props => {
                   viewBox="0 0 504.4 504.4"
                   width="30px"
                   height="30px"
+                  fill="white"
                 >
                   <path
                     d="M377.6,0.2H126.4C56.8,0.2,0,57,0,126.6v251.6c0,69.2,56.8,126,126.4,126H378c69.6,0,126.4-56.8,126.4-126.4V126.6
@@ -145,6 +151,7 @@ const Home = props => {
                   viewBox="0 0 438.536 438.536"
                   width="30px"
                   height="30px"
+                  fill="white"
                 >
                   <path
                     d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123
@@ -162,10 +169,120 @@ const Home = props => {
               </a>
             </div>
           </div>
-          <div
-            className="col-12 col-md-5 text-secondary d-flex justify-content-end align-items-end"
-            style={{ height: "70vh" }}
-          >
+        </div>
+      </div>
+      <div
+        className="container-fluid p-4 bg-light text-dark"
+        style={{ height: "30vh" }}
+      >
+        <div className="row">
+          <div className="col-7 d-flex">
+            <div className="card m-4 w-50 p-2">
+              <h3>
+                <svg
+                  x="0px"
+                  y="0px"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 31.076 31.076"
+                >
+                  <path
+                    d="M21.549,20.227v-3.947c0-8.806-3.725-14.125-5.283-15.964C16.098,0.116,15.851,0.002,15.591,0
+			c-0.261-0.001-0.508,0.112-0.679,0.31c-1.584,1.835-5.384,7.156-5.384,15.97v3.948l-0.729,0.491
+			c-1.405,0.948-2.248,2.533-2.248,4.229v4.711c0,0.279,0.154,0.537,0.4,0.67c0.247,0.132,0.546,0.117,0.778-0.039l2.368-1.577
+			c0.665-0.442,1.445-0.679,2.244-0.679h1.741v2.283c0,0.42,0.34,0.76,0.759,0.76h1.394c0.419,0,0.759-0.34,0.759-0.76v-2.283h1.74
+			c0.799,0,1.58,0.235,2.246,0.68l2.366,1.576c0.232,0.156,0.531,0.171,0.778,0.039c0.246-0.133,0.4-0.391,0.4-0.67v-4.711
+			c0-1.694-0.844-3.279-2.248-4.229L21.549,20.227z M15.539,14.043c-1.446,0-2.62-1.173-2.62-2.619c0-1.447,1.174-2.619,2.62-2.619
+			c1.445,0,2.619,1.172,2.619,2.619C18.158,12.87,16.984,14.043,15.539,14.043z"
+                  />
+                </svg>
+                Rocket Page
+              </h3>
+              <div className="h-50"></div>
+              <button
+                className="btn btn-dark text-light my-auto"
+                onClick={() => goOtherPage("rocket")}
+              >
+                LEARN MORE
+              </button>
+            </div>
+            <div className="card m-4 w-50 p-2">
+              <h3>
+                <svg
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 478.08 478.08"
+                  width="30px"
+                  height="30px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        d="M458.176,452.48H425.92c0-0.512,0.512-1.024,0.512-1.536c-0.512-33.28-27.136-59.904-60.416-59.392
+			c-24.064,0-45.568,14.848-54.784,36.864c-15.872,2.048-30.72,10.752-39.936,24.064H221.12
+			c-8.192-14.848-23.552-23.552-39.936-23.552h-0.512c-9.216-26.624-38.4-40.96-65.024-31.232
+			c-8.704,3.072-16.896,8.704-23.04,15.872l-9.728-1.024c-24.064,0-45.568,16.384-51.712,39.936H19.904
+			c-7.168,0-12.8,5.632-12.8,12.8c0,7.168,5.632,12.8,12.8,12.8h438.272c7.168,0,12.8-5.632,12.8-12.8
+			C470.976,458.112,465.344,452.48,458.176,452.48z"
+                      />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path
+                        d="M355.776,190.336c-8.704-8.704-19.456-15.36-31.232-19.456c-1.536-40.448-13.312-79.872-34.816-114.688
+			c-1.536-3.584-28.16-39.424-41.472-52.736c-5.12-4.608-13.312-4.608-18.432,0c-48.128,48.64-74.24,105.472-76.288,167.424
+			c-11.776,4.096-22.528,10.752-31.232,19.456c-32.256,29.696-34.816,79.872-5.12,112.64c2.048,2.56,5.12,4.096,8.704,4.096h0.512
+			c3.072,0,6.656-1.024,8.704-3.584l34.816-31.744c7.168,18.432,15.872,36.352,27.136,52.736
+			c10.24,15.36,36.352,16.896,44.032,16.896h0.512c10.752,0,29.184-2.048,37.888-14.336c11.776-16.896,21.504-35.84,28.672-55.296
+			l34.816,31.744c2.048,2.56,5.632,3.584,8.704,3.584h0.512c3.584,0,6.656-1.536,8.704-4.096
+			C390.592,270.208,388.032,220.032,355.776,190.336z M239.04,198.016c-24.064-0.512-43.52-19.968-43.52-44.032
+			s19.456-43.52,43.52-43.52s43.52,19.456,43.52,43.52S263.104,197.504,239.04,198.016z"
+                      />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <rect
+                        x="226.24"
+                        y="359.808"
+                        width="25.6"
+                        height="59.904"
+                      />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <rect
+                        x="268.224"
+                        y="350.08"
+                        width="25.6"
+                        height="54.784"
+                      />
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <rect
+                        x="184.256"
+                        y="350.08"
+                        width="25.6"
+                        height="50.176"
+                      />
+                    </g>
+                  </g>
+                </svg>
+                Launch Page
+              </h3>
+              <button
+                className="btn btn-dark text-light my-auto"
+                onClick={() => goOtherPage("launch")}
+              >
+                LEARN MORE
+              </button>
+            </div>
+          </div>
+          <div className="col-5 text-secondary">
             <div className="row">
               <div className="col-12 col-md-6">
                 <h5>Company Info</h5>
@@ -195,22 +312,9 @@ const Home = props => {
           </div>
         </div>
       </div>
-      <div
-        className="container-fluid p-4 bg-secondary text-dark"
-        style={{ height: "40vh" }}
-      >
-          <div className="card m-4 w-50 p-2">
-          <h3>Rocket Page</h3>
-          <button className="btn btn-dark text-light my-auto" onClick={() => goOtherPage('rocket')}>Go to page</button>
-          </div>
-          <div className="card m-4 w-50 p-2">
-          <h3>Launch Page</h3>
-          <button className="btn btn-dark text-light my-auto" onClick={() => goOtherPage('launch')}>Go to page</button>
-          </div>
-      </div>
       <Footer />
-    </React.Fragment>):null
-  );
+    </React.Fragment>
+  ) : null;
 };
 
 export default withRouter(Home);

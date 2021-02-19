@@ -5,7 +5,7 @@ const Header = (props) => {
   return (
     <Navbar bg="dark" variant="dark" sticky="top">
       <Navbar.Brand href="/">
-        <svg viewBox="0 0 600 510" style={styles.bgLogo}>
+        <svg viewBox="0 0 600 510" fill="white">
           <rect y="235.145" width="15.705" height="100.093" />
           <rect x="324.81" y="218.948" width="16.683" height="15.705" />
           <rect x="291.453" y="218.948" width="16.682" height="15.705" />
