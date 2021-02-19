@@ -21,7 +21,7 @@ const Rocket = (props) => {
   }, []);
 
   const goDetail = (data) => {
-    history.push("/RocketDetail", { rocket_id: data });
+    history.push("/SpaceX/rocket/rocketDetail", { rocket_id: data });
   };
   return (
     <React.Fragment>

@@ -71,7 +71,7 @@ const Launch = (props) => {
   };
 
   const goDetail = (data) => {
-    history.push("/launchDetail", { data: data });
+    history.push("/SpaceX/launch/launchDetail", { data: data });
   };
 
   return (

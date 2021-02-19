@@ -9,7 +9,7 @@ const LaunchDetail = (props) => {
   const { history } = props;
 
   const goRocket = () => {
-    history.push("/rocketDetail", { rocket_id: data.rocket.rocket_id });
+    history.push("/SpaceX/rocket/rocketDetail", { rocket_id: data.rocket.rocket_id });
   };
 
   return (

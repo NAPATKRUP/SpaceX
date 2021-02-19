@@ -208,7 +208,7 @@ const Home = (props) => {
               <div className="h-50"></div>
               <button
                 className="btn btn-dark text-light my-auto"
-                onClick={() => goOtherPage("rocket")}
+                onClick={() => goOtherPage("SpaceX/rocket")}
               >
                 LEARN MORE
               </button>
@@ -283,7 +283,7 @@ const Home = (props) => {
               </h3>
               <button
                 className="btn btn-dark text-light my-auto"
-                onClick={() => goOtherPage("launch")}
+                onClick={() => goOtherPage("SpaceX/launch")}
               >
                 LEARN MORE
               </button>
