@@ -64,7 +64,10 @@ const LaunchDetail = (props) => {
                   <div className="col-6">
                     Rocket type: <b>{data?.rocket.rocket_type}</b>
                   </div>
-                  <Button className="btn btn-dark mx-auto mt-4" onClick={() => goRocket()}>
+                  <Button
+                    className="btn btn-dark mx-auto mt-4"
+                    onClick={() => goRocket()}
+                  >
                     ABOUT ROCKET
                   </Button>
                 </div>

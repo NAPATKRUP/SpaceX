@@ -15,7 +15,6 @@ const Home = (props) => {
 
   useEffect(() => {
     const fetchRockets = async () => {
-
       const response = await fetch("https://api.spacexdata.com/v3/info");
       const data = await response.json();
 

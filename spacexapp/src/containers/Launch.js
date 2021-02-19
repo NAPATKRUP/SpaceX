@@ -61,7 +61,7 @@ const Launch = (props) => {
           <div
             className="bg-light d-grid w-100 m-auto overflow-auto"
             style={{
-              height: "80vh",
+              height: "50vh",
             }}
             onScroll={handleScroll}
           >

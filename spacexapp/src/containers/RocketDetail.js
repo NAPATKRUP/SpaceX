@@ -11,7 +11,6 @@ const RocketDetail = (props) => {
 
   useEffect(() => {
     const fetchRockets = async () => {
-      console.log(rocket_id);
       const response = await fetch(
         `https://api.spacexdata.com/v3/rockets/${rocket_id}`
       );
@@ -43,29 +42,40 @@ const RocketDetail = (props) => {
                 {rocket?.active?.toString()}
               </b>
             </p>
-            <small><b>Stage: </b>{rocket.stages} | <b>Boosters: </b>{rocket.boosters} | <b>Cost per launch: </b>{rocket.cost_per_launch} | <b>Success rate pct: </b>{rocket.success_rate_pct} | <b>First flight: </b>{rocket.first_flight}</small>
+            <small>
+              <b>Stage: </b>
+              {rocket.stages} | <b>Boosters: </b>
+              {rocket.boosters} | <b>Cost per launch: </b>
+              {rocket.cost_per_launch} | <b>Success rate pct: </b>
+              {rocket.success_rate_pct} | <b>First flight: </b>
+              {rocket.first_flight}
+            </small>
           </div>
           <div className="col-6">
             <h3>Spec</h3>
             <p>
-              - <b>Heigth: </b>{rocket.height.meters} meter/{rocket.height.feet} feet
+              - <b>Heigth: </b>
+              {rocket.height.meters} meter/{rocket.height.feet} feet
             </p>
             <p>
-              - <b>Diameter: </b>{rocket.diameter.meters} meter/{rocket.diameter.feet}{" "}
-              feet
+              - <b>Diameter: </b>
+              {rocket.diameter.meters} meter/{rocket.diameter.feet} feet
             </p>
             <p>
-              - <b>Mass: </b>{rocket.mass.kg} kg/{rocket.mass.lb} lb
+              - <b>Mass: </b>
+              {rocket.mass.kg} kg/{rocket.mass.lb} lb
             </p>
             <div className="bg-secondary text-light p-4">
-            <p><b>Payload weight</b></p>
-            {rocket.payload_weights.map((p, index) => (
-              <div key={p.name}>
-                <small>
-                  {index+1}.) Name: {p.name} | kg: {p.kg} kg/{p.lb} lb
-                </small>
-              </div>
-            ))}
+              <p>
+                <b>Payload weight</b>
+              </p>
+              {rocket.payload_weights.map((p, index) => (
+                <div key={p.name}>
+                  <small>
+                    {index + 1}.) Name: {p.name} | kg: {p.kg} kg/{p.lb} lb
+                  </small>
+                </div>
+              ))}
             </div>
           </div>
         </div>
