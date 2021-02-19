@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { withRouter } from "react-router-dom";
@@ -7,11 +7,15 @@ const Rocket = (props) => {
   const [allRocket, setAllRocket] = useState([]);
   const { history } = props;
 
+  const handleAllRocket = useCallback(
+    (value) => setAllRocket(value), []
+  )
+
   useEffect(() => {
     const fetchRockets = async () => {
       const response = await fetch("https://api.spacexdata.com/v3/rockets");
       const data = await response.json();
-      setAllRocket(data);
+      handleAllRocket(data);
     };
     fetchRockets();
   }, []);

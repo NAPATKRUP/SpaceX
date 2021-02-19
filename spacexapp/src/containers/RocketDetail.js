@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { withRouter } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,6 +9,14 @@ const RocketDetail = (props) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  const handleRocket = useCallback(
+    (value) => setRocket(value), []
+  )
+
+  const handleIsLoading = useCallback(
+    (value) => setIsLoading(value), []
+  )
+
   useEffect(() => {
     const fetchRockets = async () => {
       const response = await fetch(
@@ -16,8 +24,8 @@ const RocketDetail = (props) => {
       );
       const data = await response.json();
 
-      setRocket(data);
-      setIsLoading(true);
+      handleRocket(data);
+      handleIsLoading(true);
     };
     fetchRockets();
   }, [rocket_id]);

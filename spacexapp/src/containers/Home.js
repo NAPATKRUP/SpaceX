@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { withRouter } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,6 +9,14 @@ const Home = (props) => {
 
   const { history } = props;
 
+  const handleInfo = useCallback(
+    (value) => setInfo(value), []
+  )
+
+  const handleIsLoading = useCallback(
+    (value) => setIsLoading(value), []
+  )
+
   const goOtherPage = (pageURL) => {
     history.push(`/${pageURL}`);
   };
@@ -18,8 +26,8 @@ const Home = (props) => {
       const response = await fetch("https://api.spacexdata.com/v3/info");
       const data = await response.json();
 
-      setInfo(data);
-      setIsLoading(true);
+      handleInfo(data);
+      handleIsLoading(true);
     };
     fetchRockets();
   }, []);

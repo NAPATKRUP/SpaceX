@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { withRouter } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import spacexApi from "../api/spacexApi";
 import { Form, Table, Button } from "react-bootstrap";
 
 const Launch = (props) => {
@@ -17,20 +16,45 @@ const Launch = (props) => {
 
   const { history } = props;
 
+  const handleLaunchData = useCallback(
+    (value) => setLaunchData(value), []
+  )
+
+  const handlePage = useCallback(
+    (value) => setPage(value), []
+  )
+
+  const handleLoadMore = useCallback(
+    (value) => setLoadMore(value), []
+  )
+
+  const handleQueryYear = useCallback(
+    (value) => setQueryYear(value), []
+  )
+
+  const handleQueryName = useCallback(
+    (value) => setQueryName(value), []
+  )
+
+  const handleQuerySuccess = useCallback(
+    (value) => setQuerySucces(value), []
+  )
+
   const handleScroll = (event) => {
     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
 
     if (scrollHeight - scrollTop === clientHeight) {
-      setPage((prev) => prev + 1);
+      handlePage((prev) => prev + 1);
     }
   };
 
   useEffect(() => {
     const getData = async () => {
-      setLoadMore(true);
-      const response = await spacexApi.get("/launches");
-      setLaunchData((prev) => [...prev, ...response.data]);
-      setLoadMore(false);
+      handleLoadMore(true);
+      const response = await fetch("https://api.spacexdata.com/v3/launches");
+      const data = await response.json()
+      handleLaunchData((prev) => [...prev, ...data]);
+      handleLoadMore(false);
     };
     getData();
   }, [page]);
@@ -81,7 +105,7 @@ const Launch = (props) => {
                       <Form>
                         <Form.Control
                           placeholder="search Rocket name"
-                          onChange={(e) => setQueryName(e.target.value)}
+                          onChange={(e) => handleQueryName(e.target.value)}
                         />
                       </Form>
                     </td>
@@ -89,7 +113,7 @@ const Launch = (props) => {
                       <Form>
                         <Form.Control
                           placeholder="search year"
-                          onChange={(e) => setQueryYear(e.target.value)}
+                          onChange={(e) => handleQueryYear(e.target.value)}
                         />
                       </Form>
                     </td>
@@ -97,7 +121,7 @@ const Launch = (props) => {
                       <Form>
                         <Form.Control
                           placeholder="search success"
-                          onChange={(e) => setQuerySucces(e.target.value)}
+                          onChange={(e) => handleQuerySuccess(e.target.value)}
                         />
                       </Form>
                     </td>
