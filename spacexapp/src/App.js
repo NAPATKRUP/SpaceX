@@ -10,6 +10,7 @@ const App = () => {
   const renderRouter = () => {
     return (
       <Switch>
+        <Route exact path="/SpaceX" component={Home} />
         <Route exact path="/" component={Home} />
         <Route exact path="/launch" component={Launch} />
         <Route exact path="/rocket" component={Rocket} />
