@@ -1,19 +1,30 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import {withRouter} from 'react-router-dom'
 
-const Home = () => {
+const Home = props => {
   const [info, setInfo] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
+
+  const {history} = props
+
+  const goOtherPage = pageURL => {
+    history.push(`/${pageURL}`)
+  }
+
   useEffect(() => {
     const fetchRockets = async () => {
       const response = await fetch("https://api.spacexdata.com/v3/info");
       const data = await response.json();
       console.log(data);
       setInfo(data);
+      setIsLoading(true);
     };
     fetchRockets();
   }, []);
   return (
+    isLoading ?(
     <React.Fragment>
       <Header />
       <div
@@ -25,7 +36,7 @@ const Home = () => {
             <h3>{info.name}</h3>
             <p>{info.summary}</p>
             <div className="d-flex flex-row">
-              <a href={info.links.website} className="m-2">
+              <a href={info?.links?.website} className="m-2">
                 <svg
                   x="0px"
                   y="0px"
@@ -190,16 +201,16 @@ const Home = () => {
       >
           <div className="card m-4 w-50 p-2">
           <h3>Rocket Page</h3>
-          <button className="btn btn-dark text-light my-auto">Go to page</button>
+          <button className="btn btn-dark text-light my-auto" onClick={() => goOtherPage('rocket')}>Go to page</button>
           </div>
           <div className="card m-4 w-50 p-2">
           <h3>Launch Page</h3>
-          <button className="btn btn-dark text-light my-auto">Go to page</button>
+          <button className="btn btn-dark text-light my-auto" onClick={() => goOtherPage('launch')}>Go to page</button>
           </div>
       </div>
       <Footer />
-    </React.Fragment>
+    </React.Fragment>):null
   );
 };
 
-export default Home;
+export default withRouter(Home);

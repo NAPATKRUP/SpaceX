@@ -4,6 +4,7 @@ import Header from "../components/Header";
 const RocketDetail = (props) => {
   const [rocket, setRocket] = useState([]);
   const { rocket_id } = props.location.state;
+  console.log(props.location.state)
 
   useEffect(() => {
     const fetchRockets = async () => {
