@@ -29,7 +29,7 @@ const Rocket = (props) => {
         style={{ minHeight: "100vh" }}
       >
         <div className="row">
-          <div className="col-12 col-md-4 d-flex justify-content-center align-items-center">
+          <div className="col-12 col-md-4 d-none d-md-flex justify-content-center align-items-center">
             <svg
               x="0px"
               y="0px"
@@ -63,7 +63,7 @@ const Rocket = (props) => {
                 {allRocket.map((rocket) => (
                   <div
                     className="card bg-dark text-white m-4"
-                    style={{ width: "95%", height: "60vh" }}
+                    style={{ width: "90%", height: "55vh" }}
                     key={rocket.rocket_id}
                   >
                     <img

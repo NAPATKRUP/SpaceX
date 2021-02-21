@@ -103,8 +103,8 @@ const RocketDetail = (props) => {
               key={index + 1}
               className="m-3 rounded"
               style={{
-                width: "450px",
-                height: "250px",
+                width: "40%",
+                height: "15%",
                 opacity: 0.9,
                 backgroundPosition: "center",
                 backgroundRepeat: false,

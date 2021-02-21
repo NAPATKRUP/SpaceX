@@ -30,12 +30,12 @@ const LaunchDetail = (props) => {
               <img src={data.links.mission_patch_small}></img>
               <p className="my-4">{data.details}</p>
               <div className="row text-center">
-                <div className="col-4">
+                <div className="col-12 col-md-4">
                   Launch Year: <b>{data.launch_year}</b>
                 </div>
-                <div className="col-4">
+                <div className="col-12 col-md-4">
                   Launch Success:
-                  <svg height="20" width="20" className="m-2">
+                  <svg height="20" width="20">
                     <circle
                       cx="10"
                       cy="10"
@@ -44,11 +44,11 @@ const LaunchDetail = (props) => {
                     />
                   </svg>
                 </div>
-                <div className="col-4">
+                <div className="col-12 col-md-4">
                   Launch Window: <b>{data.launch_window}</b>
                 </div>
               </div>
-              <div className="inline">
+              <div className="inline mt-3">
                 <a
                   href={data.links.wikipedia}
                   target="_blank"
@@ -70,7 +70,7 @@ const LaunchDetail = (props) => {
 
         <div className="d-flex justify-content-center mt-5">
           <div className="card w-75">
-            <div className="card-header  text-center">
+            <div className="card-header text-center">
               <p className="h5">ROCKET IN MISSION</p>
             </div>
             <div className="card-body">

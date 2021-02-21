@@ -179,7 +179,7 @@ const Home = (props) => {
         style={{ minHeight: "30vh" }}
       >
         <div className="row">
-          <div className="col-12 col-md-7 d-flex justify-content-center">
+          <div className="col-12 col-md-7 d-none d-md-flex justify-content-center">
             <div className="card m-4 w-50 p-2">
               <h3>
                 <svg
@@ -279,6 +279,26 @@ const Home = (props) => {
               </h3>
               <button
                 className="btn btn-dark text-light my-auto"
+                onClick={() => goOtherPage("SpaceX/launch")}
+              >
+                LEARN MORE
+              </button>
+            </div>
+          </div>
+          <div className="col-12 col-md-7 d-block d-md-none m-4">
+            <div className="d-flex m-3">
+              <h4>Rocket Page</h4>
+              <button
+                className="btn btn-dark text-light ml-2"
+                onClick={() => goOtherPage("SpaceX/rocket")}
+              >
+                LEARN MORE
+              </button>
+            </div>
+            <div className="d-flex m-3">
+              <h4>Launch Page</h4>
+              <button
+                className="btn btn-dark text-light ml-2"
                 onClick={() => goOtherPage("SpaceX/launch")}
               >
                 LEARN MORE
