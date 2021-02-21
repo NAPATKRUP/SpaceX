@@ -201,7 +201,6 @@ const Home = (props) => {
                 </svg>
                 ROCKET PAGE
               </h3>
-              <div className="h-50"></div>
               <button
                 className="btn btn-dark text-light my-auto"
                 onClick={() => goOtherPage("SpaceX/rocket")}
