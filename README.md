@@ -13,9 +13,9 @@ ______
 |:-----:|:-----:|
 |Rocket Detail Page|Launch Page|
 
-|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launchDetail.png" width="450px"/>|
-|:-----:|
-|Launch Detail Page|
+|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launchDetail.png" width="450px"/>||
+|:-----:|:-----:|
+|Launch Detail Page||
 
 ### Mobile
 |<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/mobile_1.jpg" width="200px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/mobile_2.jpg" width="200px"/>|
