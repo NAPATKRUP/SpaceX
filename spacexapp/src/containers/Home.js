@@ -45,6 +45,7 @@ const Home = (props) => {
             <div className="d-flex flex-row">
               <a
                 href={info.links.website}
+                aria-label="website"
                 target="_blank"
                 rel="noopener"
                 className="m-2"
@@ -135,6 +136,7 @@ const Home = (props) => {
               </a>
               <a
                 href={info.links.twitter}
+                aria-label="twitter"
                 target="_blank"
                 rel="noopener"
                 className="m-2"
@@ -159,6 +161,7 @@ const Home = (props) => {
               </a>
               <a
                 href={info.links.flickr}
+                aria-label="flickr"
                 target="_blank"
                 rel="noopener"
                 className="m-2"
@@ -299,30 +302,30 @@ const Home = (props) => {
               </button>
             </div>
           </div>
-          <div className="col-12 col-md-7 d-block d-md-none m-4">
+          <div className="col-12 d-block d-md-none my-3">
             <div className="d-flex justify-content-center align-items-center m-3">
-              <h5 className="mt-1">ROCKET PAGE</h5>
+              <p className="mt-1">ROCKET PAGE</p>
               <button
-                className="btn btn-dark text-light ml-2 w-75"
+                className="btn btn-dark text-light ml-3 w-50"
                 onClick={() => goOtherPage("SpaceX/rocket")}
               >
                 LEARN MORE
               </button>
             </div>
             <div className="d-flex justify-content-center align-items-center m-3">
-              <h5 className="mt-1">LAUNCH PAGE</h5>
+              <p className="mt-1">LAUNCH PAGE</p>
               <button
-                className="btn btn-dark text-light ml-2 w-75"
+                className="btn btn-dark text-light ml-3 w-50"
                 onClick={() => goOtherPage("SpaceX/launch")}
               >
                 LEARN MORE
               </button>
             </div>
           </div>
-          <div className="col-12 col-md-5 text-secondary d-flex justify-content-center">
+          <div className="col-12 col-md-5 text-dark d-flex justify-content-center">
             <div className="row">
               <div className="col-6">
-                <h5>Company Info</h5>
+                <p>Company Info</p>
                 <small className="my-1">
                   <b>Founder:</b> {info.founder}
                   <br></br>
@@ -336,7 +339,7 @@ const Home = (props) => {
                 </small>
               </div>
               <div className="col-6">
-                <h5>Address Info</h5>
+                <p>Address Info</p>
                 <small className="my-1">
                   <b>Address:</b> {info.headquarters.address}
                   <br></br>
