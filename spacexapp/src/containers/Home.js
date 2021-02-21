@@ -286,7 +286,7 @@ const Home = (props) => {
             </div>
           </div>
           <div className="col-12 col-md-7 d-block d-md-none m-4">
-            <div className="d-flex m-3">
+            <div className="d-flex justify-content-center align-items-center m-3">
               <h5 className="mt-1">ROCKET PAGE</h5>
               <button
                 className="btn btn-dark text-light ml-2 w-75"
@@ -295,7 +295,7 @@ const Home = (props) => {
                 LEARN MORE
               </button>
             </div>
-            <div className="d-flex m-3">
+            <div className="d-flex justify-content-center align-items-center m-3">
               <h5 className="mt-1">LAUNCH PAGE</h5>
               <button
                 className="btn btn-dark text-light ml-2 w-75"
