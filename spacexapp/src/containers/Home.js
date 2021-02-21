@@ -43,7 +43,12 @@ const Home = (props) => {
             <h3>{info.name}</h3>
             <p>{info.summary}</p>
             <div className="d-flex flex-row">
-              <a href={info.links.website} target="_blank" className="m-2">
+              <a
+                href={info.links.website}
+                target="_blank"
+                rel="noopener"
+                className="m-2"
+              >
                 <svg
                   x="0px"
                   y="0px"
@@ -128,7 +133,12 @@ const Home = (props) => {
                   </g>
                 </svg>
               </a>
-              <a href={info.links.twitter} target="_blank" className="m-2">
+              <a
+                href={info.links.twitter}
+                target="_blank"
+                rel="noopener"
+                className="m-2"
+              >
                 <svg
                   x="0px"
                   y="0px"
@@ -147,7 +157,12 @@ const Home = (props) => {
                   />
                 </svg>
               </a>
-              <a href={info.links.flickr} target="_blank" className="m-2">
+              <a
+                href={info.links.flickr}
+                target="_blank"
+                rel="noopener"
+                className="m-2"
+              >
                 <svg
                   x="0px"
                   y="0px"
