@@ -38,7 +38,7 @@ const Home = (props) => {
         <div className="row">
           <div
             className="col-12 col-md-7 d-flex flex-column justify-content-center"
-            style={{ height: "80vh" }}
+            style={{ minHeight: "80vh" }}
           >
             <h3>{info.name}</h3>
             <p>{info.summary}</p>
@@ -174,9 +174,12 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-      <div className="container-fluid p-4 bg-light" style={{ height: "30vh" }}>
+      <div
+        className="container-fluid p-4 bg-light"
+        style={{ minHeight: "30vh" }}
+      >
         <div className="row">
-          <div className="col-7 d-flex">
+          <div className="col-12 col-md-7 d-flex justify-content-center">
             <div className="card m-4 w-50 p-2">
               <h3>
                 <svg
@@ -282,9 +285,9 @@ const Home = (props) => {
               </button>
             </div>
           </div>
-          <div className="col-5 text-secondary">
+          <div className="col-12 col-md-5 text-secondary d-flex justify-content-center">
             <div className="row">
-              <div className="col-12 col-md-6">
+              <div className="col-6">
                 <h5>Company Info</h5>
                 <small className="my-1">
                   <b>Founder:</b> {info.founder}
@@ -298,7 +301,7 @@ const Home = (props) => {
                   <b>CTO_PROPULSION:</b> {info.cto_propulsion}
                 </small>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-6">
                 <h5>Address Info</h5>
                 <small className="my-1">
                   <b>Address:</b> {info.headquarters.address}

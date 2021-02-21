@@ -25,11 +25,11 @@ const Rocket = (props) => {
     <React.Fragment>
       <Header />
       <div
-        className="container-fulid bgBlack overflow-hidden"
+        className="container-fulid bgBlack overflow-hidden py-4"
         style={{ minHeight: "100vh" }}
       >
         <div className="row">
-          <div className="col d-flex justify-content-center align-items-center">
+          <div className="col-12 col-md-4 d-flex justify-content-center align-items-center">
             <svg
               x="0px"
               y="0px"
@@ -57,13 +57,13 @@ const Rocket = (props) => {
               />
             </svg>
           </div>
-          <div className="col">
+          <div className="col-12 col-md-8">
             <div className="overflow-auto" style={{ height: "100vh" }}>
               <div>
                 {allRocket.map((rocket) => (
                   <div
                     className="card bg-dark text-white m-4"
-                    style={{ width: "800px", height: "400px" }}
+                    style={{ width: "95%", height: "60vh" }}
                     key={rocket.rocket_id}
                   >
                     <img

@@ -3,7 +3,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import { LinkContainer, IndexLinkContainer } from "react-router-bootstrap";
 const Header = (props) => {
   return (
-    <Navbar variant="dark" sticky="top" className="bgBlack">
+    <Navbar variant="dark" sticky="top" expand="lg" className="bgBlack">
       <Navbar.Brand href="/SpaceX">
         <svg viewBox="0 0 600 510" fill="white">
           <rect y="235.145" width="15.705" height="100.093" />

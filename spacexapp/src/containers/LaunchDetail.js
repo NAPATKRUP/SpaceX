@@ -22,7 +22,7 @@ const LaunchDetail = (props) => {
           <h1>MISSION: {data.mission_name}</h1>
         </div>
         <div className="d-flex justify-content-center mt-4">
-          <div className="card w-50">
+          <div className="card w-75">
             <div className="card-header text-center">
               <p className="h5">LAUNCH DETAIL</p>
             </div>
@@ -69,7 +69,7 @@ const LaunchDetail = (props) => {
         </div>
 
         <div className="d-flex justify-content-center mt-5">
-          <div className="card w-50">
+          <div className="card w-75">
             <div className="card-header  text-center">
               <p className="h5">ROCKET IN MISSION</p>
             </div>

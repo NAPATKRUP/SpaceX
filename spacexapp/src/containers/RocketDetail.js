@@ -34,7 +34,7 @@ const RocketDetail = (props) => {
         style={{ minHeight: "100vh" }}
       >
         <div className="row p-4 bg-light text-dark m-3 rounded">
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <h1>{rocket.rocket_name}</h1>
             <p>{rocket.description}</p>
             <p>
@@ -67,7 +67,7 @@ const RocketDetail = (props) => {
               Wikipedia
             </a>
           </div>
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <h4>SPEC</h4>
             <p>
               - <b>Heigth: </b>
