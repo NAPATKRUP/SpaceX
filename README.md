@@ -5,17 +5,17 @@ ______
 
 # Screenshot
 ### Desktop
-|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/home.png" width="450px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/rocket.png" width="450px"/>|
-|:-----:|:-----:|
-|Home Page|Rocket Page|
+|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/home.png" width="1000px"/>|
+|:-----:|
+|Home Page|
 
-|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/rocketDetail.png" width="450px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launch.png" width="450px"/>|
+|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/rocket.png" width="1000px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/rocketDetail.png" width="1000px"/>|
 |:-----:|:-----:|
-|Rocket Detail Page|Launch Page|
+|Rocket Page|Rocket Detail Page|
 
-|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launchDetail.png" width="450px"/>||
+|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launch.png" width="1000px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launchDetail.png" width="1000px"/>|
 |:-----:|:-----:|
-|Launch Detail Page||
+|Launch Page|Launch Detail Page|
 
 ### Mobile
 |<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/mobile_1.jpg" width="200px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/mobile_2.jpg" width="200px"/>|
