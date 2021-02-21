@@ -4,20 +4,20 @@ ______
 ### Website: https://napatkrup.github.io/SpaceX/
 
 # Screenshot
-### Home Page
-<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/home.png" />
+### Desktop
+|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/home.png" width="300px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/rocket.png" width="300px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/rocketDetail.png" width="300px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launch.png" width="300px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launchDetail.png" width="300px"/>|
+|:-----:|:-----:|:-----:|:-----:|:-----:|
+|Home Page|Rocket Page|Rocket Detail Page|Launch Page|Launch Detail Page|
 
-### Rocket Page
-<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/rocket.png" />
+### Mobile
+|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/mobile_1.jpg" width="200px"/>|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/mobile_2.jpg" width="200px"/>|
+|:-----:|:-----:|
+|Add to Home Screen|Open App|
 
-### Rocket Detail Page
-<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/rocketDetail.png" />
-
-### Launch Page
-<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launch.png" />
-
-### Launch Detail Page
-<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/launchDetail.png" />
+# Special Requirement
+1. Responsive design (desktop and mobile)
+2. PWA: Save to APP
+3. Launches page: Display launches with pagination or infinite scroll
 
 # Team Member
 |<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/pic_napat.jpg" width="150px" height="150px">|<img src="https://github.com/NAPATKRUP/SpaceX/blob/main/README/pic_vivi.jpg" width="150px" height="150px">
