@@ -24,6 +24,5 @@ ______
 |:-----:|:-----:|
 |[napatkrup](https://github.com/NAPATKRUP)|[vivi00008](https://github.com/vivi00008)|
 
-#### รายชื่อสมาชิก
 - Napat Arayawattanapong 61070045
 - Warit Kanbunjob 60070087
