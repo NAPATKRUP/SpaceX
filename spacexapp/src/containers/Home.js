@@ -287,18 +287,18 @@ const Home = (props) => {
           </div>
           <div className="col-12 col-md-7 d-block d-md-none m-4">
             <div className="d-flex m-3">
-              <h4>Rocket Page</h4>
+              <h5 className="mt-1">ROCKET PAGE</h5>
               <button
-                className="btn btn-dark text-light ml-2"
+                className="btn btn-dark text-light ml-2 w-75"
                 onClick={() => goOtherPage("SpaceX/rocket")}
               >
                 LEARN MORE
               </button>
             </div>
             <div className="d-flex m-3">
-              <h4>Launch Page</h4>
+              <h5 className="mt-1">LAUNCH PAGE</h5>
               <button
-                className="btn btn-dark text-light ml-2"
+                className="btn btn-dark text-light ml-2 w-75"
                 onClick={() => goOtherPage("SpaceX/launch")}
               >
                 LEARN MORE
