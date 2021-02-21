@@ -7,9 +7,7 @@ const Rocket = (props) => {
   const [allRocket, setAllRocket] = useState([]);
   const { history } = props;
 
-  const handleAllRocket = useCallback(
-    (value) => setAllRocket(value), []
-  )
+  const handleAllRocket = useCallback((value) => setAllRocket(value), []);
 
   useEffect(() => {
     const fetchRockets = async () => {
@@ -27,7 +25,7 @@ const Rocket = (props) => {
     <React.Fragment>
       <Header />
       <div
-        className="container-fulid bg-dark overflow-hidden"
+        className="container-fulid bgBlack overflow-hidden"
         style={{ minHeight: "100vh" }}
       >
         <div className="row">
@@ -73,7 +71,7 @@ const Rocket = (props) => {
                       style={{
                         width: "100%",
                         height: "100%",
-                        opacity: 0.3,
+                        opacity: 0.2,
                         backgroundPosition: "center",
                         backgroundRepeat: false,
                         objectFit: "cover",
@@ -82,7 +80,17 @@ const Rocket = (props) => {
                       alt={rocket.rocket_name}
                     ></img>
                     <div className="card-img-overlay">
-                      <h4 className="card-title">{rocket.rocket_name}</h4>
+                      <h4 className="card-title">
+                        {rocket.rocket_name}
+                        <svg height="20" width="20" className="m-2">
+                          <circle
+                            cx="10"
+                            cy="10"
+                            r="8"
+                            fill={rocket.active ? "green" : "red"}
+                          />
+                        </svg>
+                      </h4>
                       <p className="card-text">{rocket.description}</p>
                       <button
                         className="btn btn-dark text-light my-auto"

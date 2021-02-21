@@ -9,13 +9,9 @@ const Home = (props) => {
 
   const { history } = props;
 
-  const handleInfo = useCallback(
-    (value) => setInfo(value), []
-  )
+  const handleInfo = useCallback((value) => setInfo(value), []);
 
-  const handleIsLoading = useCallback(
-    (value) => setIsLoading(value), []
-  )
+  const handleIsLoading = useCallback((value) => setIsLoading(value), []);
 
   const goOtherPage = (pageURL) => {
     history.push(`/${pageURL}`);
@@ -36,7 +32,7 @@ const Home = (props) => {
     <React.Fragment>
       <Header />
       <div
-        className="container-fluid p-4 bg-dark text-light d-flex flex-column justify-content-center align-items-center"
+        className="container-fluid p-4 bgBlack text-light d-flex flex-column justify-content-center align-items-center"
         style={{ minHeight: "80vh" }}
       >
         <div className="row">
@@ -47,7 +43,7 @@ const Home = (props) => {
             <h3>{info.name}</h3>
             <p>{info.summary}</p>
             <div className="d-flex flex-row">
-              <a href={info.links.website} className="m-2">
+              <a href={info.links.website} target="_blank" className="m-2">
                 <svg
                   x="0px"
                   y="0px"
@@ -132,7 +128,7 @@ const Home = (props) => {
                   </g>
                 </svg>
               </a>
-              <a href={info.links.twitter} className="m-2">
+              <a href={info.links.twitter} target="_blank" className="m-2">
                 <svg
                   x="0px"
                   y="0px"
@@ -151,7 +147,7 @@ const Home = (props) => {
                   />
                 </svg>
               </a>
-              <a href={info.links.flickr} className="m-2">
+              <a href={info.links.flickr} target="_blank" className="m-2">
                 <svg
                   x="0px"
                   y="0px"
@@ -178,10 +174,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-      <div
-        className="container-fluid p-4 bg-light text-dark"
-        style={{ height: "30vh" }}
-      >
+      <div className="container-fluid p-4 bg-light" style={{ height: "30vh" }}>
         <div className="row">
           <div className="col-7 d-flex">
             <div className="card m-4 w-50 p-2">
@@ -203,7 +196,7 @@ const Home = (props) => {
 			c1.445,0,2.619,1.172,2.619,2.619C18.158,12.87,16.984,14.043,15.539,14.043z"
                   />
                 </svg>
-                Rocket Page
+                ROCKET PAGE
               </h3>
               <div className="h-50"></div>
               <button
@@ -279,7 +272,7 @@ const Home = (props) => {
                     </g>
                   </g>
                 </svg>
-                Launch Page
+                LAUNCH PAGE
               </h3>
               <button
                 className="btn btn-dark text-light my-auto"

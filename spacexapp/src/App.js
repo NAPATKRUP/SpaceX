@@ -5,6 +5,7 @@ import Launch from "./containers/Launch";
 import Rocket from "./containers/Rocket";
 import LaunchDetail from "./containers/LaunchDetail";
 import RocketDetail from "./containers/RocketDetail";
+import "./App.css";
 
 const App = () => {
   const renderRouter = () => {
@@ -13,8 +14,16 @@ const App = () => {
         <Route exact path="/SpaceX" component={Home} />
         <Route exact path="/SpaceX/launch" component={Launch} />
         <Route exact path="/SpaceX/rocket" component={Rocket} />
-        <Route exact path="/SpaceX/launch/launchDetail" component={LaunchDetail} />
-        <Route exact path="/SpaceX/rocket/rocketDetail" component={RocketDetail} />
+        <Route
+          exact
+          path="/SpaceX/launch/launchDetail"
+          component={LaunchDetail}
+        />
+        <Route
+          exact
+          path="/SpaceX/rocket/rocketDetail"
+          component={RocketDetail}
+        />
       </Switch>
     );
   };

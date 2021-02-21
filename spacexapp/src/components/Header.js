@@ -3,7 +3,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import { LinkContainer, IndexLinkContainer } from "react-router-bootstrap";
 const Header = (props) => {
   return (
-    <Navbar bg="dark" variant="dark" sticky="top">
+    <Navbar variant="dark" sticky="top" className="bgBlack">
       <Navbar.Brand href="/SpaceX">
         <svg viewBox="0 0 600 510" fill="white">
           <rect y="235.145" width="15.705" height="100.093" />
@@ -54,21 +54,21 @@ const Header = (props) => {
             activeClassName="active"
             style={styles.textHeader}
           >
-            <Nav.Link>Home</Nav.Link>
+            <Nav.Link>HOME</Nav.Link>
           </IndexLinkContainer>
           <LinkContainer
             to="/SpaceX/rocket"
             activeClassName="active"
             style={styles.textHeader}
           >
-            <Nav.Link>Rocket</Nav.Link>
+            <Nav.Link>ROCKET</Nav.Link>
           </LinkContainer>
           <LinkContainer
             to="/SpaceX/launch"
             activeClassName="active"
             style={styles.textHeader}
           >
-            <Nav.Link>Launch</Nav.Link>
+            <Nav.Link>LAUNCH</Nav.Link>
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>
@@ -77,14 +77,6 @@ const Header = (props) => {
 };
 
 const styles = {
-  bgLogo: {
-    backgroundColor: "white",
-    width: 50,
-    height: 50,
-    padding: 2,
-    borderRadius: 100,
-    margin: "0px 10px 0px 0px",
-  },
   textHeader: {
     margin: "0px 20px",
   },
