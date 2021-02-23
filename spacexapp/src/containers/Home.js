@@ -221,7 +221,7 @@ const Home = (props) => {
               </h3>
               <button
                 className="btn btn-dark text-light my-auto"
-                onClick={() => goOtherPage("SpaceX/rocket")}
+                onClick={() => goOtherPage("rocket")}
               >
                 LEARN MORE
               </button>
@@ -296,7 +296,7 @@ const Home = (props) => {
               </h3>
               <button
                 className="btn btn-dark text-light my-auto"
-                onClick={() => goOtherPage("SpaceX/launch")}
+                onClick={() => goOtherPage("launch")}
               >
                 LEARN MORE
               </button>
@@ -307,7 +307,7 @@ const Home = (props) => {
               <p className="mt-1">ROCKET PAGE</p>
               <button
                 className="btn btn-dark text-light ml-3 w-50"
-                onClick={() => goOtherPage("SpaceX/rocket")}
+                onClick={() => goOtherPage("rocket")}
               >
                 LEARN MORE
               </button>
@@ -316,7 +316,7 @@ const Home = (props) => {
               <p className="mt-1">LAUNCH PAGE</p>
               <button
                 className="btn btn-dark text-light ml-3 w-50"
-                onClick={() => goOtherPage("SpaceX/launch")}
+                onClick={() => goOtherPage("launch")}
               >
                 LEARN MORE
               </button>

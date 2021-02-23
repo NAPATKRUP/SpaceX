@@ -50,21 +50,21 @@ const Header = (props) => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <IndexLinkContainer
-            to="/SpaceX"
+            to="/"
             activeClassName="active"
             style={styles.textHeader}
           >
             <Nav.Link>HOME</Nav.Link>
           </IndexLinkContainer>
           <LinkContainer
-            to="/SpaceX/rocket"
+            to="/rocket"
             activeClassName="active"
             style={styles.textHeader}
           >
             <Nav.Link>ROCKET</Nav.Link>
           </LinkContainer>
           <LinkContainer
-            to="/SpaceX/launch"
+            to="/launch"
             activeClassName="active"
             style={styles.textHeader}
           >
